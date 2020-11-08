@@ -1,0 +1,36 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.5.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'com.Ally'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'com.h2database:h2'
+	implementation 'junit:junit:4.12'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+//	testCompile 'org.junit.jupiter:junit-jupiter:5.6.0'
+//	testRuntime 'org.junit.jupiter:junit-jupiter:5.6.0'
+//	testCompile group: 'org.mockito', name: 'mockito-core', version: '2.21.0'
+//	testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.4'
+//	testCompile group: 'junit', name: 'junit', version: '4.12'
+//	testCompile 'org.springframework.boot:spring-boot-starter-test'
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
