@@ -21,7 +21,9 @@
             <th>Current Bid</th>
             <th>Reserve Price</th>
             <th>Description</th>
+            <th>Highest Bidder</th>
             <th>Place Bid</th>
+
         </tr>
         </thead>
         <tbody>
@@ -30,10 +32,10 @@
             <td>{{auctionItem.currentBid}}</td>
             <td>{{auctionItem.reservePrice}}</td>
             <td>{{auctionItem.item.description}}</td>
+            <td>{{auctionItem.user.name}}</td>
+
             <td>
                 <form #bidForm="ngForm" (ngSubmit)="onSubmit(auctionItem)" novalidate>
-<!--                {{bidForm.value | json}}-->
-<!--                {{submitBid | json}}-->
                 <label>Name:</label><br>
                 <input type="text" name="name" [(ngModel)]="submitBid.bidderName"><br>
                 <label>Auto-bid amount:</label><br>

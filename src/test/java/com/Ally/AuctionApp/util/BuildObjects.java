@@ -60,7 +60,6 @@ public class BuildObjects {
 
     public static Bid buildBid() {
         return Bid.builder()
-                .bidderName("David")
                 .auctionitem(buildAuctionItem())
                 .maxAutoBidAmount(new BigDecimal(60000))
                 .id(1l)

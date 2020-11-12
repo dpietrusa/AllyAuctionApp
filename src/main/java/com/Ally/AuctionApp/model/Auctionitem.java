@@ -1,6 +1,5 @@
 package com.Ally.AuctionApp.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -19,9 +18,11 @@ public class Auctionitem {
     private long id;
     private BigDecimal currentBid;
     private BigDecimal reservePrice;
+    @ManyToOne
+    @JoinColumn(name="user_id")
+    private User user;
     @OneToOne(mappedBy = "auctionitem", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Item item;
-    @JsonBackReference
     @OneToMany(mappedBy = "auctionitem")
     Set<Bid> bids;
     private boolean isReservePriceMet;

@@ -7,6 +7,7 @@ import com.Ally.AuctionApp.model.Auctionitem;
 import com.Ally.AuctionApp.model.request.SubmitBidRequest;
 import com.Ally.AuctionApp.repository.AuctionitemRepository;
 import com.Ally.AuctionApp.repository.BidRepository;
+import com.Ally.AuctionApp.repository.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -29,6 +30,8 @@ public class BidServiceTest {
     AuctionitemRepository auctionitemRepository;
     @Mock
     BidRepository bidRepository;
+    @Mock
+    UserRepository userRepository;
 
     @Test(expected = ReserveNotMetException.class)
     public void submitBidShouldThrowExceptionIfReserveIsNotMet() throws ReserveNotMetException, OutbidException, InvalidBidAmountException {

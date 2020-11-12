@@ -18,8 +18,11 @@ public class Bid {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private BigDecimal maxAutoBidAmount;
-    private String bidderName;
     @ManyToOne
     @JoinColumn(name = "auction_item_id", referencedColumnName = "id")
     private Auctionitem auctionitem;
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;
+
 }

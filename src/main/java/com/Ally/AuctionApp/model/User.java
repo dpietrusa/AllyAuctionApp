@@ -1,11 +1,10 @@
 package com.Ally.AuctionApp.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -18,9 +17,10 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
-
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    private long id;
-//    private String name;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonBackReference
+    private Set<Auctionitem> auctionitem;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonBackReference
+    private Set<Bid> bid;
 }
