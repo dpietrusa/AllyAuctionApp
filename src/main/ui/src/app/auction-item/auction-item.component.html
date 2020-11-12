@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Auction Items</h2>
+<!--    <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>-->
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Item</th>
+            <th>Current Bid</th>
+            <th>Reserve Price</th>
+            <th>Description</th>
+            <th>Place Bid</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let auctionItem of auctionItems">
+            <td>{{auctionItem.item.itemId}}</td>
+            <td>{{auctionItem.currentBid}}</td>
+            <td>{{auctionItem.reservePrice}}</td>
+            <td>{{auctionItem.item.description}}</td>
+            <td>
+                <form #bidForm="ngForm" (ngSubmit)="onSubmit(auctionItem)" novalidate>
+<!--                {{bidForm.value | json}}-->
+<!--                {{submitBid | json}}-->
+                <label>Name:</label><br>
+                <input type="text" name="name" [(ngModel)]="submitBid.bidderName"><br>
+                <label>Auto-bid amount:</label><br>
+                <input type = "number" name="autBidAmount" [(ngModel)]="submitBid.maxAutoBidAmount"><br>
+                    <button type="submit">Submit bid</button>
+                </form>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
+

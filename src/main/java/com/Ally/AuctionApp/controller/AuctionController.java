@@ -15,6 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/auctionItems")
+@CrossOrigin(origins = "*")
 public class AuctionController {
     @Autowired
     AuctionitemRepository auctionitemRepository;

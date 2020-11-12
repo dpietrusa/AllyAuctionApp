@@ -5,9 +5,12 @@ import com.Ally.AuctionApp.model.Bid;
 import com.Ally.AuctionApp.model.Item;
 import com.Ally.AuctionApp.model.request.SubmitAuctionItemRequest;
 import com.Ally.AuctionApp.model.request.SubmitBidRequest;
+import com.Ally.AuctionApp.model.response.CreateAuctionItemResponse;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class BuildObjects {
@@ -62,5 +65,42 @@ public class BuildObjects {
                 .maxAutoBidAmount(new BigDecimal(60000))
                 .id(1l)
                 .build();
+    }
+
+    public static CreateAuctionItemResponse buildCreateAuctionItemResponse() {
+        return CreateAuctionItemResponse.builder()
+                .auctionItemId("2")
+                .build();
+    }
+
+    public static List<Auctionitem> buildListOfAuctionItems() {
+        List<Auctionitem> auctionItemList = new ArrayList<>();
+        Item item1 = Item.builder()
+                .id(1l)
+                .itemId("honda accord")
+                .description("great condition")
+                .build();
+        Item item2 = Item.builder()
+                .id(1l)
+                .itemId("ford probe")
+                .description("great condition")
+                .build();
+        Auctionitem auctionItem1 = Auctionitem.builder()
+                .id(1l)
+                .currentBid(new BigDecimal(1500))
+                .reservePrice(new BigDecimal(1000))
+                .isReservePriceMet(true)
+                .item(item1)
+                .build();
+        Auctionitem auctionItem2 = Auctionitem.builder()
+                .id(2l)
+                .currentBid(new BigDecimal(1500))
+                .reservePrice(new BigDecimal(1000))
+                .isReservePriceMet(true)
+                .item(item2)
+                .build();
+        auctionItemList.add(auctionItem1);
+        auctionItemList.add(auctionItem2);
+        return auctionItemList;
     }
 }
