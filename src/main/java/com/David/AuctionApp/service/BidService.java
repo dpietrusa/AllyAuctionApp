@@ -24,34 +24,34 @@ public class BidService {
     @Autowired
     UserRepository userRepository;
 
-    public String submitBid(SubmitBidRequest bidRequest) throws ReserveNotMetException, OutbidException, InvalidBidAmountException {
-        Auctionitem auctionItem = auctionitemRepository.getOne(bidRequest.getAuctionItemId());
-        User user = checkIfUserExistsAndAddIfNotFound(bidRequest.getBidderName());
-        validateBidAmountIsGreaterThanCurrentBid(auctionItem, bidRequest.getMaxAutoBidAmount());
+    public String submitBid(SubmitBidRequest currentBidRequest) throws ReserveNotMetException, OutbidException, InvalidBidAmountException {
+        Auctionitem auctionItem = auctionitemRepository.getOne(currentBidRequest.getAuctionItemId());
+        User user = checkIfUserExistsAndAddIfNotFound(currentBidRequest.getBidderName());
+        validateBidAmountIsGreaterThanCurrentBid(auctionItem, currentBidRequest.getMaxAutoBidAmount());
         if (!auctionItem.isReservePriceMet()) {
-            if (bidRequest.getMaxAutoBidAmount().compareTo(auctionItem.getReservePrice()) == -1) {
-                auctionItem.setCurrentBid(bidRequest.getMaxAutoBidAmount());
+            if (currentBidRequest.getMaxAutoBidAmount().compareTo(auctionItem.getReservePrice()) == -1) {
+                auctionItem.setCurrentBid(currentBidRequest.getMaxAutoBidAmount());
                 auctionItem.setUser(user);
-                saveBid(bidRequest, auctionItem, user);
+                saveBid(currentBidRequest, auctionItem, user);
                 throw new ReserveNotMetException(auctionItem.getReservePrice());
             } else {
                 auctionItem.setReservePriceMet(true);
                 auctionItem.setCurrentBid(auctionItem.getReservePrice());
                 auctionItem.setUser(user);
-                saveBid(bidRequest, auctionItem, user);
+                saveBid(currentBidRequest, auctionItem, user);
                 return "You are the highest bidder. Current bid: $" + auctionItem.getCurrentBid();
             }
         } else {
             BigDecimal highestBid = bidRepository.findMaxAutoBidForAuctionItem(auctionItem.getId());
-            if (bidRequest.getMaxAutoBidAmount().compareTo(highestBid) == 1) {
+            if (currentBidRequest.getMaxAutoBidAmount().compareTo(highestBid) == 1) {
                 auctionItem.setCurrentBid(highestBid.add(new BigDecimal("1")));
                 auctionItem.setUser(user);
 
-                saveBid(bidRequest, auctionItem, user);
+                saveBid(currentBidRequest, auctionItem, user);
                 return "You are the highest bidder. Current bid: $" + auctionItem.getCurrentBid();
             } else {
-                auctionItem.setCurrentBid(bidRequest.getMaxAutoBidAmount().add(new BigDecimal("1")));
-                saveBid(bidRequest, auctionItem, user);
+                auctionItem.setCurrentBid(currentBidRequest.getMaxAutoBidAmount().add(new BigDecimal("1")));
+                saveBid(currentBidRequest, auctionItem, user);
                 throw new OutbidException(auctionItem.getCurrentBid());
             }
         }
