@@ -1,4 +1,4 @@
-package com.Ally.AuctionApp.exception;
+package com.David.AuctionApp.exception;
 
 import java.math.BigDecimal;
 

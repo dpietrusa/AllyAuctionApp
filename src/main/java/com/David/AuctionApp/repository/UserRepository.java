@@ -1,6 +1,6 @@
-package com.Ally.AuctionApp.repository;
+package com.David.AuctionApp.repository;
 
-import com.Ally.AuctionApp.model.User;
+import com.David.AuctionApp.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {

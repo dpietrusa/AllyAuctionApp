@@ -1,4 +1,4 @@
-package com.Ally.AuctionApp;
+package com.David.AuctionApp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

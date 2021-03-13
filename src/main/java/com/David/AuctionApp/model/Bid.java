@@ -1,4 +1,4 @@
-package com.Ally.AuctionApp.model;
+package com.David.AuctionApp.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;

@@ -1,11 +1,11 @@
-package com.Ally.AuctionApp.util;
+package com.David.AuctionApp.util;
 
-import com.Ally.AuctionApp.model.Auctionitem;
-import com.Ally.AuctionApp.model.Bid;
-import com.Ally.AuctionApp.model.Item;
-import com.Ally.AuctionApp.model.request.SubmitAuctionItemRequest;
-import com.Ally.AuctionApp.model.request.SubmitBidRequest;
-import com.Ally.AuctionApp.model.response.CreateAuctionItemResponse;
+import com.David.AuctionApp.model.Auctionitem;
+import com.David.AuctionApp.model.Bid;
+import com.David.AuctionApp.model.Item;
+import com.David.AuctionApp.model.request.SubmitAuctionItemRequest;
+import com.David.AuctionApp.model.request.SubmitBidRequest;
+import com.David.AuctionApp.model.response.CreateAuctionItemResponse;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

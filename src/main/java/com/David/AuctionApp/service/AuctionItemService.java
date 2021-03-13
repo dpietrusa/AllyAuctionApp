@@ -1,11 +1,11 @@
-package com.Ally.AuctionApp.service;
+package com.David.AuctionApp.service;
 
-import com.Ally.AuctionApp.model.Auctionitem;
-import com.Ally.AuctionApp.model.Item;
-import com.Ally.AuctionApp.model.request.SubmitAuctionItemRequest;
-import com.Ally.AuctionApp.model.response.CreateAuctionItemResponse;
-import com.Ally.AuctionApp.repository.AuctionitemRepository;
-import com.Ally.AuctionApp.repository.ItemRepository;
+import com.David.AuctionApp.model.Auctionitem;
+import com.David.AuctionApp.model.Item;
+import com.David.AuctionApp.model.request.SubmitAuctionItemRequest;
+import com.David.AuctionApp.model.response.CreateAuctionItemResponse;
+import com.David.AuctionApp.repository.AuctionitemRepository;
+import com.David.AuctionApp.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

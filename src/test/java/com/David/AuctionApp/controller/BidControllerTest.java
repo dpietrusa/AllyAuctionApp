@@ -1,7 +1,8 @@
-package com.Ally.AuctionApp.controller;
+package com.David.AuctionApp.controller;
 
 
-import com.Ally.AuctionApp.service.BidService;
+import com.David.AuctionApp.service.BidService;
+import com.David.AuctionApp.util.BuildObjects;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,7 +18,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import static com.Ally.AuctionApp.util.BuildObjects.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -41,7 +41,7 @@ public class BidControllerTest {
 
     @Test
     public void submitBidShouldReturnStringFromSubmitBidService() throws Exception {
-        String request = mapper.writeValueAsString(buildSubmitBidRequest());
+        String request = mapper.writeValueAsString(BuildObjects.buildSubmitBidRequest());
         Mockito.when(bidService.submitBid(Mockito.any())).thenReturn("response from bid service");
         mockMvc.perform(post("/bid")
                 .contentType(MediaType.APPLICATION_JSON)

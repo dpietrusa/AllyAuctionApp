@@ -1,7 +1,7 @@
-package com.Ally.AuctionApp.controller;
+package com.David.AuctionApp.controller;
 
-import com.Ally.AuctionApp.repository.AuctionitemRepository;
-import com.Ally.AuctionApp.service.AuctionItemService;
+import com.David.AuctionApp.repository.AuctionitemRepository;
+import com.David.AuctionApp.service.AuctionItemService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +19,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.Optional;
 
-import static com.Ally.AuctionApp.util.BuildObjects.*;
+import static com.David.AuctionApp.util.BuildObjects.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;

@@ -1,15 +1,15 @@
-package com.Ally.AuctionApp.service;
+package com.David.AuctionApp.service;
 
-import com.Ally.AuctionApp.exception.InvalidBidAmountException;
-import com.Ally.AuctionApp.exception.OutbidException;
-import com.Ally.AuctionApp.exception.ReserveNotMetException;
-import com.Ally.AuctionApp.model.Auctionitem;
-import com.Ally.AuctionApp.model.Bid;
-import com.Ally.AuctionApp.model.User;
-import com.Ally.AuctionApp.model.request.SubmitBidRequest;
-import com.Ally.AuctionApp.repository.AuctionitemRepository;
-import com.Ally.AuctionApp.repository.BidRepository;
-import com.Ally.AuctionApp.repository.UserRepository;
+import com.David.AuctionApp.exception.InvalidBidAmountException;
+import com.David.AuctionApp.exception.OutbidException;
+import com.David.AuctionApp.exception.ReserveNotMetException;
+import com.David.AuctionApp.model.Auctionitem;
+import com.David.AuctionApp.model.Bid;
+import com.David.AuctionApp.model.User;
+import com.David.AuctionApp.model.request.SubmitBidRequest;
+import com.David.AuctionApp.repository.AuctionitemRepository;
+import com.David.AuctionApp.repository.BidRepository;
+import com.David.AuctionApp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,8 +1,8 @@
-package com.Ally.AuctionApp.service;
+package com.David.AuctionApp.service;
 
-import com.Ally.AuctionApp.model.response.CreateAuctionItemResponse;
-import com.Ally.AuctionApp.repository.AuctionitemRepository;
-import com.Ally.AuctionApp.repository.ItemRepository;
+import com.David.AuctionApp.model.response.CreateAuctionItemResponse;
+import com.David.AuctionApp.repository.AuctionitemRepository;
+import com.David.AuctionApp.repository.ItemRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -11,7 +11,7 @@ import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import static com.Ally.AuctionApp.util.BuildObjects.*;
+import static com.David.AuctionApp.util.BuildObjects.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)

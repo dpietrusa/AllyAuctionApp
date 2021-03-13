@@ -1,6 +1,6 @@
-package com.Ally.AuctionApp.model.request;
+package com.David.AuctionApp.model.request;
 
-import com.Ally.AuctionApp.model.Item;
+import com.David.AuctionApp.model.Item;
 import lombok.*;
 
 import java.math.BigDecimal;

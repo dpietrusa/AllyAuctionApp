@@ -1,10 +1,10 @@
-package com.Ally.AuctionApp.controller;
+package com.David.AuctionApp.controller;
 
-import com.Ally.AuctionApp.exception.InvalidBidAmountException;
-import com.Ally.AuctionApp.exception.OutbidException;
-import com.Ally.AuctionApp.exception.ReserveNotMetException;
-import com.Ally.AuctionApp.model.request.SubmitBidRequest;
-import com.Ally.AuctionApp.service.BidService;
+import com.David.AuctionApp.exception.InvalidBidAmountException;
+import com.David.AuctionApp.exception.OutbidException;
+import com.David.AuctionApp.exception.ReserveNotMetException;
+import com.David.AuctionApp.model.request.SubmitBidRequest;
+import com.David.AuctionApp.service.BidService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,6 +1,6 @@
-package com.Ally.AuctionApp.repository;
+package com.David.AuctionApp.repository;
 
-import com.Ally.AuctionApp.model.Bid;
+import com.David.AuctionApp.model.Bid;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

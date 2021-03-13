@@ -1,4 +1,4 @@
-package com.Ally.AuctionApp.model.request;
+package com.David.AuctionApp.model.request;
 
 import lombok.*;
 

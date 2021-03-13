@@ -1,10 +1,10 @@
-package com.Ally.AuctionApp.controller;
+package com.David.AuctionApp.controller;
 
-import com.Ally.AuctionApp.model.Auctionitem;
-import com.Ally.AuctionApp.model.request.SubmitAuctionItemRequest;
-import com.Ally.AuctionApp.model.response.CreateAuctionItemResponse;
-import com.Ally.AuctionApp.repository.AuctionitemRepository;
-import com.Ally.AuctionApp.service.AuctionItemService;
+import com.David.AuctionApp.model.Auctionitem;
+import com.David.AuctionApp.model.request.SubmitAuctionItemRequest;
+import com.David.AuctionApp.model.response.CreateAuctionItemResponse;
+import com.David.AuctionApp.repository.AuctionitemRepository;
+import com.David.AuctionApp.service.AuctionItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

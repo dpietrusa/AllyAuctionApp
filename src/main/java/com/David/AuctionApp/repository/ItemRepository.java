@@ -1,6 +1,6 @@
-package com.Ally.AuctionApp.repository;
+package com.David.AuctionApp.repository;
 
-import com.Ally.AuctionApp.model.Item;
+import com.David.AuctionApp.model.Item;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
